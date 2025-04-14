@@ -1,19 +1,15 @@
-import { useEffect } from 'react'
-import { useDispatch } from 'react-redux'
-import { setPageTitle } from '../../features/common/headerSlice'
-import Calendar from '../../features/calendar'
+import { useEffect } from "react";
+import useStore from "../../app/store_zustand";
+import Calendar from "../../features/calendar";
 
-function InternalPage(){
-    const dispatch = useDispatch()
+function InternalPage() {
+  const setPageTitle = useStore((state) => state.setPageTitle);
 
-    useEffect(() => {
-        dispatch(setPageTitle({ title : "Calendar"}))
-      }, [])
+  useEffect(() => {
+    setPageTitle("Calendar");
+  }, [setPageTitle]);
 
-
-    return(
-        <Calendar />
-    )
+  return <Calendar />;
 }
 
-export default InternalPage
+export default InternalPage;

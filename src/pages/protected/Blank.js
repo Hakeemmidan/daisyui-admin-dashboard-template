@@ -1,27 +1,27 @@
-import { useEffect } from 'react'
-import { useDispatch } from 'react-redux'
-import { setPageTitle } from '../../features/common/headerSlice'
+import { useEffect } from "react";
+import useStore from "../../app/store_zustand";
+import DocComponentsNav from "../../features/documentation/components/DocComponentsNav";
+import GettingStartedNav from "../../features/documentation/components/GettingStartedNav";
 
-import DocumentIcon  from '@heroicons/react/24/solid/DocumentIcon'
+function InternalPage() {
+  const setPageTitle = useStore((state) => state.setPageTitle);
 
-function InternalPage(){
+  useEffect(() => {
+    setPageTitle("Documentation");
+  }, [setPageTitle]);
 
-    const dispatch = useDispatch()
-
-    useEffect(() => {
-        dispatch(setPageTitle({ title : "Page Title"}))
-      }, [])
-      
-    return(
-        <div className="hero h-4/5 bg-base-200">
-            <div className="hero-content text-accent text-center">
-                <div className="max-w-md">
-                <DocumentIcon className="h-48 w-48 inline-block"/>
-                <h1 className="text-5xl mt-2 font-bold">Blank Page</h1>
-                </div>
-            </div>
+  return (
+    <div className="h-full w-full bg-base-200 flex items-center">
+      <div className="card w-full max-w-xl mx-auto shadow-xl">
+        <div className="py-12 p-10 bg-base-100 rounded-xl">
+          <div className="flex justify-center mb-8">
+            <DocComponentsNav activeIndex={0} />
+          </div>
+          <GettingStartedNav />
         </div>
-    )
+      </div>
+    </div>
+  );
 }
 
-export default InternalPage
+export default InternalPage;

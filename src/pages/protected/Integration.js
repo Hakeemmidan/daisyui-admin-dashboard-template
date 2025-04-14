@@ -1,19 +1,15 @@
-import { useEffect } from 'react'
-import { useDispatch } from 'react-redux'
-import { setPageTitle } from '../../features/common/headerSlice'
-import Integration from '../../features/integration'
+import { useEffect } from "react";
+import useStore from "../../app/store_zustand";
+import Integration from "../../features/integration";
 
-function InternalPage(){
+function InternalPage() {
+  const setPageTitle = useStore((state) => state.setPageTitle);
 
-    const dispatch = useDispatch()
+  useEffect(() => {
+    setPageTitle("Integrations");
+  }, [setPageTitle]);
 
-    useEffect(() => {
-        dispatch(setPageTitle({ title : "Integrations"}))
-      }, [])
-      
-    return(
-        <Integration />
-    )
+  return <Integration />;
 }
 
-export default InternalPage
+export default InternalPage;

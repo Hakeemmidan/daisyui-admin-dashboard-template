@@ -1,19 +1,15 @@
-import { useEffect } from 'react'
-import { useDispatch } from 'react-redux'
-import { setPageTitle } from '../../features/common/headerSlice'
-import Dashboard from '../../features/dashboard/index'
+import { useEffect } from "react";
+import useStore from "../../app/store_zustand";
+import Dashboard from "../../features/dashboard/index";
 
-function InternalPage(){
-    const dispatch = useDispatch()
+function InternalPage() {
+  const setPageTitle = useStore((state) => state.setPageTitle);
 
-    useEffect(() => {
-        dispatch(setPageTitle({ title : "Dashboard"}))
-      }, [])
+  useEffect(() => {
+    setPageTitle("Dashboard");
+  }, [setPageTitle]);
 
-
-    return(
-        <Dashboard />
-    )
+  return <Dashboard />;
 }
 
-export default InternalPage
+export default InternalPage;

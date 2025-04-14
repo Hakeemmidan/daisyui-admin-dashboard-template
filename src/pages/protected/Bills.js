@@ -1,19 +1,15 @@
-import { useEffect } from 'react'
-import { useDispatch } from 'react-redux'
-import { setPageTitle } from '../../features/common/headerSlice'
-import Billing from '../../features/settings/billing'
+import { useEffect } from "react";
+import useStore from "../../app/store_zustand";
+import Billing from "../../features/settings/billing";
 
-function InternalPage(){
-    const dispatch = useDispatch()
+function InternalPage() {
+  const setPageTitle = useStore((state) => state.setPageTitle);
 
-    useEffect(() => {
-        dispatch(setPageTitle({ title : "Bills"}))
-      }, [])
+  useEffect(() => {
+    setPageTitle("Bills");
+  }, [setPageTitle]);
 
-
-    return(
-        <Billing />
-    )
+  return <Billing />;
 }
 
-export default InternalPage
+export default InternalPage;

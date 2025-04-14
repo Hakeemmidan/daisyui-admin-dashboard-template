@@ -1,19 +1,15 @@
-import { useEffect } from 'react'
-import { useDispatch } from 'react-redux'
-import Charts from '../../features/charts'
-import { setPageTitle } from '../../features/common/headerSlice'
+import { useEffect } from "react";
+import useStore from "../../app/store_zustand";
+import Charts from "../../features/charts";
 
-function InternalPage(){
-    const dispatch = useDispatch()
+function InternalPage() {
+  const setPageTitle = useStore((state) => state.setPageTitle);
 
-    useEffect(() => {
-        dispatch(setPageTitle({ title : "Analytics"}))
-      }, [])
+  useEffect(() => {
+    setPageTitle("Analytics");
+  }, [setPageTitle]);
 
-
-    return(
-        <Charts />
-    )
+  return <Charts />;
 }
 
-export default InternalPage
+export default InternalPage;
