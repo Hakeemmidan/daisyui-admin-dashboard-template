@@ -8,7 +8,7 @@ function GettingStartedNav({activeIndex}){
         {name : "Tailwind CSS", isActive : false},
         {name : "Daisy UI", isActive : false},
         {name : "Chart JS", isActive : false},
-        {name : "Redux Toolkit", isActive : false},
+        {name : "Zustand", isActive : false},
         {name : "Hero Icons", isActive : false},
         {name : "Project Structure", isActive : false},
     ]
