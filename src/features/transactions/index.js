@@ -53,7 +53,7 @@ const TopSideButtons = ({ removeFilter, applyFilter, applySearch }) => {
         </label>
         <ul
           tabIndex={0}
-          className="dropdown-content menu p-2 text-sm shadow bg-base-100 rounded-box w-52"
+          className="dropdown-content menu p-2 text-sm shadow bg-base-100 rounded-box w-52 z-50"
         >
           {locationFilters.map((l, k) => {
             return (
