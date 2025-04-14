@@ -4,7 +4,7 @@
 # Daisy UI Admin Dashboard Template - DashWind 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
 
-This is a free admin dashboard template that uses **Daisy UI** and React js. It has **fully customizable and themable CSS**  CSS and is powered by Tailwind CSS utility classes. Additionally, it comes with **redux toolkit** and other libraries already set up.
+This is a free admin dashboard template that uses **Daisy UI** and React js. It has **fully customizable and themable CSS**  CSS and is powered by Tailwind CSS utility classes. Additionally, it comes with **zustand** and other libraries already set up.
 
 
 ## Preview
@@ -21,7 +21,7 @@ This is a free admin dashboard template that uses **Daisy UI** and React js. It 
 - **Light/dark** mode toggle
 - Token based user **authentication**
 - **Submenu support** in sidebar
-- Store management using **redux toolkit**
+- Store management using **zustand**
 - **Daisy UI** components and **Tailwind** support
 - **Right and left sidebar**, Universal loader, notifications
 - **Calendar**, global modal, **chart js 2**  and other components
